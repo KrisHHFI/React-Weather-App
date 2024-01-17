@@ -2,26 +2,24 @@ import React from 'react';
 
 interface WeatherTodayProps {
     location: string;
+    weatherData: any; // Weather data prop
 }
 
-export default function WeatherToday({ location }: WeatherTodayProps) {
-
+export default function WeatherToday({ location, weatherData }: WeatherTodayProps) {
     return (
-        <>
+        <div>
             <div>
-                <div>
-                    {location}
-                </div>
-                <div>
-                    Weather icon
-                </div>
-                <div>
-                    weather description
-                </div>
-                <div>
-                    temperature
-                </div>
+                Location: {weatherData?.name}
             </div>
-        </>
+            <div>
+                Weather icon: {weatherData?.weather?.[0]?.icon ? `https://openweathermap.org/img/w/${weatherData.weather[0].icon}.png` : "No icon available"}
+            </div>
+            <div>
+                Weather: {weatherData?.weather[0]?.main}
+            </div>
+            <div>
+                Temperature: {weatherData?.main?.temp}
+            </div>
+        </div>
     );
 }
