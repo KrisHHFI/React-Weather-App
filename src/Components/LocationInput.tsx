@@ -5,7 +5,15 @@ export default function locationInput() {
     return (
         <>
             <div>
-                location Input
+                <form>
+                    <input
+                        type="text"
+                        placeholder="Location"
+                    />
+                     <button>
+                        Submit
+                    </button>
+                </form>
             </div>
         </>
     );
