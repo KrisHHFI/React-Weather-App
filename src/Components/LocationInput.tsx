@@ -1,11 +1,10 @@
 import React, { useRef } from 'react';
 
 interface LocationInputProps {
-    onLocationChange: (location: string) => void;
     onWeatherData: (weatherData: any) => void; // Callback for passing weather data
   }
   
-  export default function LocationInput({ onLocationChange, onWeatherData }: LocationInputProps) {
+  export default function LocationInput({ onWeatherData }: LocationInputProps) {
     const locationInput = useRef<HTMLInputElement>(null); // Hook introduced with a null value
 
     // Passes the current value of locationInput to onLocationChange, when the button is pressed
@@ -17,7 +16,6 @@ interface LocationInputProps {
             .then(response => response.json())
             .then(responseData => {
                 console.log(responseData);
-                onLocationChange(locationInput.current!.value); // Change location
                 if (responseData.cod == "404") {
                     return;
                 }

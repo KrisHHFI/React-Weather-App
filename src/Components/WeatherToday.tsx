@@ -1,11 +1,10 @@
 import React from 'react';
 
 interface WeatherTodayProps {
-    location: string;
     weatherData: any; // Weather data prop
 }
 
-export default function WeatherToday({ location, weatherData }: WeatherTodayProps) {
+export default function WeatherToday({ weatherData }: WeatherTodayProps) {
     return (
         <div>
             <div>
