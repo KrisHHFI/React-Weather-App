@@ -9,21 +9,22 @@ export default function WeatherToday({ weatherData }: WeatherTodayProps) {
     const weatherIcon = weatherData?.weather?.[0]?.icon;
     const weatherIconUrl = weatherIcon ? `https://openweathermap.org/img/w/${weatherIcon}.png` : null;
     const weatherDescription = weatherData?.weather?.[0]?.main || "Weather not available";
-    const temperature = weatherData?.main?.temp || "Temperature not available";
+    let temperature = weatherData?.main?.temp || "Temperature not available";
+    temperature = (temperature - 273.15).toFixed(0);
 
     return (
         <div>
             <div>
-                Location: {locationName}
+                {locationName}
             </div>
             <div>
-                Weather icon: {weatherIconUrl ? <img src={weatherIconUrl} alt="Weather icon" /> : "No icon available"}
+                {weatherIconUrl ? <img src={weatherIconUrl} alt="Weather icon" /> : "No icon available"}
             </div>
             <div>
-                Weather: {weatherDescription}
+                {weatherDescription}
             </div>
             <div>
-                Temperature: {temperature}
+                {temperature}°
             </div>
         </div>
     );

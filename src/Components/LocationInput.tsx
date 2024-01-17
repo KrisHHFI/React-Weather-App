@@ -34,7 +34,6 @@ export default function LocationInput({ onWeatherData }: LocationInputProps) {
         searchWeather(new MouseEvent('click', { bubbles: true, cancelable: true, view: window }) as any);
     }, []);
     
-
     return (
         <>
             <div>
