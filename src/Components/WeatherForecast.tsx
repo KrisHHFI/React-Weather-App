@@ -1,11 +1,15 @@
 import React from 'react';
 
-export default function WeatherForecast() {
+interface WeatherForecastProps {
+    location: string;
+}
+
+export default function WeatherForecast({ location }: WeatherForecastProps) {
 
     return (
         <>
             <div>
-                Next 7 days
+                Next 7 days in  {location}
             </div>
         </>
     );

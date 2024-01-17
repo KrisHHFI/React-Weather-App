@@ -1,12 +1,16 @@
 import React from 'react';
 
-export default function WeatherToday() {
+interface WeatherTodayProps {
+    location: string;
+}
+
+export default function WeatherToday({ location }: WeatherTodayProps) {
 
     return (
         <>
             <div>
                 <div>
-                    location
+                    {location}
                 </div>
                 <div>
                     Weather icon
