@@ -5,7 +5,7 @@ import WeatherForecast from './Components/WeatherForecast';
 import LocationInput from './Components/LocationInput';
 
 function App() {
-  const [weatherData, setWeatherData] = useState(null); // State to hold weather data
+  const [weatherData, setWeatherData] = useState("null"); // State to hold weather data
 
   const handleWeatherData = (data: any) => { // Specify the type as any for data
     setWeatherData(data);
