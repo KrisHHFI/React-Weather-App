@@ -11,6 +11,7 @@ export default function WeatherToday({ weatherData }: WeatherTodayProps) {
     const weatherDescription = weatherData?.weather?.[0]?.main || "Weather not available";
     let temperature = weatherData?.main?.temp || "Temperature not available";
     temperature = (temperature - 273.15).toFixed(0);
+    const wind = weatherData?.wind?.speed.toFixed(0);
 
     return (
         <div>
@@ -25,6 +26,9 @@ export default function WeatherToday({ weatherData }: WeatherTodayProps) {
             </div>
             <div>
                 {temperature}°
+            </div>
+            <div>
+                {wind} m/s
             </div>
         </div>
     );
