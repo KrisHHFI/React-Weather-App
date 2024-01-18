@@ -6,10 +6,7 @@ interface WeatherForecastProps {
 
 export default function WeatherForecast({ forecastedWeatherData }: WeatherForecastProps) {
     const filteredData: { [key: string]: any } = {};
-
-    let todaysDate = forecastedWeatherData?.list?.[0].dt_txt;
-    todaysDate = new Date(todaysDate);
-    todaysDate = todaysDate.getDate();
+    const todaysDate = new Date(forecastedWeatherData?.list?.[0].dt_txt).getDate();
 
     forecastedWeatherData?.list?.forEach((item: any) => {
         const itemDate = new Date(item.dt_txt);
@@ -20,28 +17,24 @@ export default function WeatherForecast({ forecastedWeatherData }: WeatherForeca
         }
     });
 
+    const filteredItems = Object.values(filteredData).filter((item: any) => {
+        const dayOfMonth = new Date(item.dt_txt).getDate();
+        return dayOfMonth !== todaysDate && formatForecastData(item) !== null;
+    });
+
     function formatForecastData(item: any) {
-        const formattedDate = new Date(item.dt_txt);
-
-        const dayOfMonth = formattedDate.getDate();
+        const dayOfMonth = new Date(item.dt_txt).getDate();
         const wind = item.wind?.speed.toFixed(0);
-
-        if (dayOfMonth === todaysDate) {
-            return null; // Return null for today's forecast
-        }
-
         const description = item.weather[0].description;
         const temperature = (item.main.temp - 273.15).toFixed(0);
 
-        // Check if any of the fields are empty
-        if (!dayOfMonth || !description || !temperature) {
+        // Don't return item if any the fields are empty or it's the current date
+        if (dayOfMonth === todaysDate) {
             return null;
         }
 
         return `${dayOfMonth}th, ${description}, ${temperature}°, ${wind} m/s`;
     }
-
-    const uniqueData = Object.values(filteredData);
 
     return (
         <>
@@ -50,13 +43,9 @@ export default function WeatherForecast({ forecastedWeatherData }: WeatherForeca
             </div>
             <div>
                 <ul>
-                    {uniqueData?.map((item: any) => {
-                        const formattedData = formatForecastData(item);
-                        if (formattedData !== null) {
-                            return <li key={item.dt}>{formattedData}</li>;
-                        }
-                        return null;
-                    })}
+                    {filteredItems.map((item: any) => (
+                        <li key={item.dt}>{formatForecastData(item)}</li>
+                    ))}
                 </ul>
             </div>
         </>
