@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import './App.css';
+import LocationInput from './Components/LocationInput';
 import WeatherToday from './Components/WeatherToday';
 import WeatherForecast from './Components/WeatherForecast';
-import LocationInput from './Components/LocationInput';
-import clouds from './Images/Clouds.png';
-import snow from './Images/Snow.png';
+import Background from './Components/Background';
 
 function App() {
   const [weatherData, setWeatherData] = useState("null"); // State to hold today's weather data
@@ -20,12 +19,10 @@ function App() {
 
   return (
     <div>
-      <div className="BackgroundPhotoContainer">
-        <img src={snow} className="BackgroundPhoto" />
-      </div>
+      <Background weatherData={weatherData} />
       <div className="App">
-        <WeatherToday weatherData={weatherData} /> {/* Pass weather data */}
-        <WeatherForecast forecastedWeatherData={forecastedWeatherData} /> {/* Pass weather data */}
+        <WeatherToday weatherData={weatherData} />
+        <WeatherForecast forecastedWeatherData={forecastedWeatherData} />
         <LocationInput
           todaysWeatherData={handleWeatherData}
           forecastedWeatherData={handleForecastedWeatherData}
