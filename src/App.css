@@ -11,5 +11,12 @@ ul {
 }
 
 .forecastedDays {
-  
+  display: flex;
+  justify-content: center;
+}
+
+.forecastedDay {
+  display: flex;
+  margin: 10px; /* Add margin for spacing between columns */
+  white-space: pre-line; /* Preserve line breaks within the element */
 }

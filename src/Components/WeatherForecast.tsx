@@ -25,7 +25,7 @@ export default function WeatherForecast({ forecastedWeatherData }: WeatherForeca
         const wind = item.wind?.speed.toFixed(0);
         const description = item.weather[0].description;
         const temperature = (item.main.temp - 273.15).toFixed(0);
-        return `${new Date(item.dt_txt).getDate()}th, ${description}, ${temperature}°, ${wind} m/s`;
+        return `${new Date(item.dt_txt).getDate()}th,\n${description},\n${temperature}°,\n${wind} m/s`;
     }
 
     const filteredItems = filterAndOrganizeData();
@@ -36,12 +36,12 @@ export default function WeatherForecast({ forecastedWeatherData }: WeatherForeca
                 <div>
                     The next 5 days in {forecastedWeatherData?.city?.name}
                 </div>
-                <div className = "forecastedDays">
-                    <ul>
-                        {filteredItems.map((item: any) => (
-                            <li key={item.dt}>{formatForecastData(item)}</li>
-                        ))}
-                    </ul>
+                <div className="forecastedDays">
+                    {filteredItems.map((item: any) => (
+                        <div className="forecastedDay" key={item.dt}>
+                            {formatForecastData(item)}
+                        </div>
+                    ))}
                 </div>
             </div>
         </>
