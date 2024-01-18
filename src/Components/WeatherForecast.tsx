@@ -1,40 +1,35 @@
-import React from 'react';
-
 interface WeatherForecastProps {
     forecastedWeatherData: any; // Forecasted weather data prop
 }
 
 export default function WeatherForecast({ forecastedWeatherData }: WeatherForecastProps) {
-    const filteredData: { [key: string]: any } = {};
     const todaysDate = new Date(forecastedWeatherData?.list?.[0].dt_txt).getDate();
 
-    forecastedWeatherData?.list?.forEach((item: any) => {
-        const itemDate = new Date(item.dt_txt);
-        const dateKey = itemDate.toDateString();
+    function filterAndOrganizeData() {
+        const filteredData: { [key: string]: any } = {};
 
-        if (!filteredData[dateKey]) {
-            filteredData[dateKey] = item;
-        }
-    });
+        forecastedWeatherData?.list?.forEach((item: any) => {
+            const dateKey = new Date(item.dt_txt).toDateString();
+            const dayOfMonth = new Date(item.dt_txt).getDate();
+            const formattedData = formatForecastData(item);
 
-    const filteredItems = Object.values(filteredData).filter((item: any) => {
-        const dayOfMonth = new Date(item.dt_txt).getDate();
-        return dayOfMonth !== todaysDate && formatForecastData(item) !== null;
-    });
+            if (!filteredData[dateKey] && dayOfMonth !== todaysDate && formattedData !== null) {
+                filteredData[dateKey] = item;
+            }
+        });
+
+        return Object.values(filteredData);
+    }
 
     function formatForecastData(item: any) {
-        const dayOfMonth = new Date(item.dt_txt).getDate();
         const wind = item.wind?.speed.toFixed(0);
         const description = item.weather[0].description;
         const temperature = (item.main.temp - 273.15).toFixed(0);
 
-        // Don't return item if any the fields are empty or it's the current date
-        if (dayOfMonth === todaysDate) {
-            return null;
-        }
-
-        return `${dayOfMonth}th, ${description}, ${temperature}°, ${wind} m/s`;
+        return `${new Date(item.dt_txt).getDate()}th, ${description}, ${temperature}°, ${wind} m/s`;
     }
+
+    const filteredItems = filterAndOrganizeData();
 
     return (
         <>
