@@ -1,10 +1,15 @@
+/* 
+- with the second API call, each day has 8 timestamps (one every 3 hours
+*/
+
 import React, { useRef, useEffect } from 'react';
 
 interface LocationInputProps {
-    onWeatherData: (weatherData: boolean) => void; // Callback for passing weather data
+    todaysWeatherData: (weatherData: boolean) => void; // Callback for passing todays weather data
+    forecastedWeatherData: (weatherForecastData: boolean) => void; // Callback for passing todays weather data
 }
 
-export default function LocationInput({ onWeatherData }: LocationInputProps) {
+export default function LocationInput({ todaysWeatherData, forecastedWeatherData }: LocationInputProps) {
     const locationInput = useRef<HTMLInputElement>(null);
     let hasDefaultWeather = false;
 
@@ -14,11 +19,11 @@ export default function LocationInput({ onWeatherData }: LocationInputProps) {
         fetch('https://api.openweathermap.org/data/2.5/weather?q=' + locationInput.current!.value + '%20&APPID=d3b94e0efe686baf1916cbf041859138')
             .then(response => response.json())
             .then(responseData => {
-                console.log(responseData);
+                console.log(locationInput.current!.value + " weather today", responseData);
                 if (responseData.cod == "404") {
                     return;
                 }
-                onWeatherData(responseData);
+                todaysWeatherData(responseData);
                 const lat = responseData.coord.lat;
                 const lon = responseData.coord.lon;
                 weatherForecastFetch(lat, lon);
@@ -32,7 +37,8 @@ export default function LocationInput({ onWeatherData }: LocationInputProps) {
         fetch('https://api.openweathermap.org/data/2.5/forecast?lat=' + lat + '&lon=' + lon + '&appid=' + 'd3b94e0efe686baf1916cbf041859138')
             .then(response => response.json())
             .then(responseData => {
-                console.log(responseData);
+                console.log(locationInput.current!.value + " weather forecast", responseData);
+                forecastedWeatherData(responseData);
             })
             .catch(err => {
                 console.log(err);

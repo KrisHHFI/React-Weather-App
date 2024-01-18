@@ -1,15 +1,15 @@
 import React from 'react';
 
 interface WeatherForecastProps {
-    weatherData: any; // Weather data prop
-}
+    forecastedWeatherData: any; // Forecasted weather data prop
+  }
 
-export default function WeatherForecast({ weatherData }: WeatherForecastProps) {
+export default function WeatherForecast({ forecastedWeatherData }: WeatherForecastProps) {
 
     return (
         <>
             <div>
-                The next 7 days in {weatherData?.name}
+                The next 7 days in {forecastedWeatherData?.city?.name}
             </div>
         </>
     );

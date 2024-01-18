@@ -5,17 +5,25 @@ import WeatherForecast from './Components/WeatherForecast';
 import LocationInput from './Components/LocationInput';
 
 function App() {
-  const [weatherData, setWeatherData] = useState("null"); // State to hold weather data
+  const [weatherData, setWeatherData] = useState("null"); // State to hold today's weather data
+  const [forecastedWeatherData, setForecastedWeatherData] = useState("null"); // State to hold forecasted weather data
 
-  const handleWeatherData = (data: any) => { // Specify the type as any for data
-    setWeatherData(data);
+  const handleWeatherData = (todayData: any) => {
+    setWeatherData(todayData);
+  };
+
+  const handleForecastedWeatherData = (forecastData: any) => {
+    setForecastedWeatherData(forecastData);
   };
 
   return (
     <div className="App">
       <WeatherToday weatherData={weatherData} /> {/* Pass weather data */}
-      <WeatherForecast weatherData={weatherData} /> {/* Pass weather data */}
-      <LocationInput onWeatherData={handleWeatherData} />
+      <WeatherForecast forecastedWeatherData={forecastedWeatherData}/> {/* Pass weather data */}
+      <LocationInput
+        todaysWeatherData={handleWeatherData}
+        forecastedWeatherData={handleForecastedWeatherData}
+      />
     </div>
   );
 }
