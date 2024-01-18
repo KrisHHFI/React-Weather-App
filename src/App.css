@@ -17,6 +17,20 @@ ul {
 
 .forecastedDay {
   display: flex;
-  margin: 10px; /* Add margin for spacing between columns */
-  white-space: pre-line; /* Preserve line breaks within the element */
+  margin: 10px;
+  white-space: pre-line;
+}
+
+.BackgroundPhotoContainer {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+}
+
+.BackgroundPhoto {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  z-index: -1;
 }

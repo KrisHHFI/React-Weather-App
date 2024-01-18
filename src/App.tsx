@@ -3,6 +3,8 @@ import './App.css';
 import WeatherToday from './Components/WeatherToday';
 import WeatherForecast from './Components/WeatherForecast';
 import LocationInput from './Components/LocationInput';
+import clouds from './Images/Clouds.png';
+import snow from './Images/Snow.png';
 
 function App() {
   const [weatherData, setWeatherData] = useState("null"); // State to hold today's weather data
@@ -17,13 +19,18 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <WeatherToday weatherData={weatherData} /> {/* Pass weather data */}
-      <WeatherForecast forecastedWeatherData={forecastedWeatherData}/> {/* Pass weather data */}
-      <LocationInput
-        todaysWeatherData={handleWeatherData}
-        forecastedWeatherData={handleForecastedWeatherData}
-      />
+    <div>
+      <div className="BackgroundPhotoContainer">
+        <img src={snow} className="BackgroundPhoto" />
+      </div>
+      <div className="App">
+        <WeatherToday weatherData={weatherData} /> {/* Pass weather data */}
+        <WeatherForecast forecastedWeatherData={forecastedWeatherData} /> {/* Pass weather data */}
+        <LocationInput
+          todaysWeatherData={handleWeatherData}
+          forecastedWeatherData={handleForecastedWeatherData}
+        />
+      </div>
     </div>
   );
 }
