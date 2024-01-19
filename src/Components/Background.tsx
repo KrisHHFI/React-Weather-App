@@ -1,8 +1,9 @@
-import clouds from '../Images/Clouds.png';
-import snow from '../Images/Snow.png';
-import clear from '../Images/Clear.png';
-import rain from '../Images/Rain.png';
-import fog from '../Images/Fog.png';
+import clouds from '../Images/Backgrounds/Clouds.png';
+import snow from '../Images/Backgrounds/Snow.png';
+import clear from '../Images/Backgrounds/Clear.png';
+import rain from '../Images/Backgrounds/Rain.png';
+import drizzle from '../Images/Backgrounds/Drizzle.png';
+import mist from '../Images/Backgrounds/Mist.png';
 
 interface WeatherTodayProps {
     weatherData: any; // Weather data prop
@@ -20,8 +21,10 @@ export default function Background({ weatherData }: WeatherTodayProps) {
         BackgroundPhoto = clear;
     } else if (weatherDescription === "Rain") {
         BackgroundPhoto = rain;
-    } else if (weatherDescription === "Fog") {
-        BackgroundPhoto = fog;
+    } else if (weatherDescription === "Drizzle") {
+        BackgroundPhoto = drizzle;
+    }else if (weatherDescription === "Mist") {
+        BackgroundPhoto = mist;
     }
 
     return (

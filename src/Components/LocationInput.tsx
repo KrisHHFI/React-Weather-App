@@ -58,7 +58,7 @@ export default function LocationInput({ todaysWeatherData, forecastedWeatherData
     return (
         <>
             <div>
-                <form>
+                <form className="LocationInput">
                     <input
                         type="text"
                         placeholder="Location"

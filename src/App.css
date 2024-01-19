@@ -34,3 +34,17 @@ ul {
   position: absolute;
   z-index: -1;
 }
+
+.LocationTitle {
+  font-size: clamp(35px, 37px, 40px);
+  /* font-size: 35px; */
+}
+
+.LocationInput {
+  position: relative;
+  z-index: 1;
+}
+
+.largeWeatherIcon {
+  width: 8%;
+}
