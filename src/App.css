@@ -36,6 +36,7 @@ ul {
   margin: 10px;
   white-space: pre-line;
   width: max-content;
+  padding: 0 5px 0 5px;
 }
 
 .BackgroundPhotoContainer {
@@ -81,4 +82,10 @@ ul {
 
 .ForecastedWeatherContainer {
   padding: 20px 0 20px 0;
+}
+
+.forecastTitle {
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 10px;
 }
