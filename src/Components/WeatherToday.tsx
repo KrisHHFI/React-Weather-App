@@ -18,12 +18,12 @@ export default function WeatherToday({ weatherData }: WeatherTodayProps) {
     const wind = weatherData?.wind?.speed.toFixed(0);
 
     let weatherIcon = "";
-    
+
     if (weather === "Clouds") {
         weatherIcon = cloud;
     } else if (weather === "Snow") {
         weatherIcon = snow;
-    }  else if (weather === "Clear") {
+    } else if (weather === "Clear") {
         weatherIcon = clear;
     } else if (weather === "Rain") {
         weatherIcon = rain;
@@ -34,22 +34,23 @@ export default function WeatherToday({ weatherData }: WeatherTodayProps) {
     }
 
     return (
-        <div>
+        <div className="TodaysWeatherContainer">
             <div className="LocationTitle">
                 {locationName}
             </div>
             <div>
                 <img className="largeWeatherIcon" src={weatherIcon} alt="Weather icon" />
-                { /*{weatherIconUrl ? <img className="largeWeatherIcon" src={weatherIconUrl} alt="Weather icon" /> : "No icon available"} */}
             </div>
-            <div>
-                {weatherDescription}
-            </div>
-            <div>
-                {temperature}°
-            </div>
-            <div>
-                {wind} m/s
+            <div className="TodaysWeatherData">
+                <div>
+                    {temperature}°
+                </div>
+                <div>
+                    {weatherDescription}
+                </div>
+                <div>
+                    {wind} m/s
+                </div>
             </div>
         </div>
     );

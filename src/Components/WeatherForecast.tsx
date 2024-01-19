@@ -32,7 +32,7 @@ export default function WeatherForecast({ forecastedWeatherData }: WeatherForeca
 
     return (
         <>
-            <div>
+            <div className="ForecastedWeatherContainer">
                 <div>
                     The next 5 days in {forecastedWeatherData?.city?.name}
                 </div>

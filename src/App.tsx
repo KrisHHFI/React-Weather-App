@@ -21,12 +21,14 @@ function App() {
     <div>
       <Background weatherData={weatherData} />
       <div className="App">
-        <WeatherToday weatherData={weatherData} />
-        <WeatherForecast forecastedWeatherData={forecastedWeatherData} />
-        <LocationInput
-          todaysWeatherData={handleWeatherData}
-          forecastedWeatherData={handleForecastedWeatherData}
-        />
+        <div className="ContentContainer">
+          <WeatherToday weatherData={weatherData} />
+          <WeatherForecast forecastedWeatherData={forecastedWeatherData} />
+          <LocationInput
+            todaysWeatherData={handleWeatherData}
+            forecastedWeatherData={handleForecastedWeatherData}
+          />
+        </div>
       </div>
     </div>
   );
