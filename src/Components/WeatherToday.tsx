@@ -1,9 +1,9 @@
-import snow from '../Images/Icons/SnowIcon.png';
-import clear from '../Images/Icons/ClearIcon.png';
-import cloud from '../Images/Icons/CloudIcon.png';
-import rain from '../Images/Icons/RainIcon.png';
-import drizzle from '../Images/Icons/DrizzleIcon.png';
-import mist from '../Images/Icons/MistIcon.png';
+import snowIcon from '../Images/Icons/SnowIcon.png';
+import clearIcon from '../Images/Icons/ClearIcon.png';
+import cloudIcon from '../Images/Icons/CloudIcon.png';
+import rainIcon from '../Images/Icons/RainIcon.png';
+import drizzleIcon from '../Images/Icons/DrizzleIcon.png';
+import mistIcon from '../Images/Icons/MistIcon.png';
 
 interface WeatherTodayProps {
     weatherData: any; // Weather data prop
@@ -20,18 +20,18 @@ export default function WeatherToday({ weatherData }: WeatherTodayProps) {
     let weatherIcon = "";
 
     if (weather === "Clouds") {
-        weatherIcon = cloud;
+        weatherIcon = cloudIcon;
     } else if (weather === "Snow") {
-        weatherIcon = snow;
+        weatherIcon = snowIcon;
     } else if (weather === "Clear") {
-        weatherIcon = clear;
+        weatherIcon = clearIcon;
     } else if (weather === "Rain") {
-        weatherIcon = rain;
+        weatherIcon = rainIcon;
     } else if (weather === "Drizzle") {
-        weatherIcon = drizzle;
-    } else if (weather === "Mist") {
-        weatherIcon = mist;
-    }
+        weatherIcon = drizzleIcon;
+    } else if (weather === "Mist" || weather === "Fog") {
+        weatherIcon = mistIcon;
+    } 
 
     return (
         <div className="TodaysWeatherContainer">
