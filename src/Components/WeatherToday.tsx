@@ -1,9 +1,4 @@
-import snowIcon from '../Images/Icons/SnowIcon.png';
-import clearIcon from '../Images/Icons/ClearIcon.png';
-import cloudIcon from '../Images/Icons/CloudIcon.png';
-import rainIcon from '../Images/Icons/RainIcon.png';
-import drizzleIcon from '../Images/Icons/DrizzleIcon.png';
-import mistIcon from '../Images/Icons/MistIcon.png';
+import { getWeatherIcon } from './WeatherIcons';
 
 interface WeatherTodayProps {
     weatherData: any; // Weather data prop
@@ -16,22 +11,7 @@ export default function WeatherToday({ weatherData }: WeatherTodayProps) {
     let temperature = weatherData?.main?.temp || "Temperature not available";
     temperature = (temperature - 273.15).toFixed(0);
     const wind = weatherData?.wind?.speed.toFixed(0);
-
-    let weatherIcon = "";
-
-    if (weather === "Clouds") {
-        weatherIcon = cloudIcon;
-    } else if (weather === "Snow") {
-        weatherIcon = snowIcon;
-    } else if (weather === "Clear") {
-        weatherIcon = clearIcon;
-    } else if (weather === "Rain") {
-        weatherIcon = rainIcon;
-    } else if (weather === "Drizzle") {
-        weatherIcon = drizzleIcon;
-    } else if (weather === "Mist" || weather === "Fog") {
-        weatherIcon = mistIcon;
-    } 
+    const weatherIcon = getWeatherIcon(weather);
 
     return (
         <div className="TodaysWeatherContainer">
