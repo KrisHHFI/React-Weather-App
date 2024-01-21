@@ -5,12 +5,12 @@ interface WeatherTodayProps {
 }
 
 export default function WeatherToday({ weatherData }: WeatherTodayProps) {
-    const locationName = weatherData?.name || "Location not available";
-    const weatherDescription = weatherData?.weather?.[0]?.description || "Weather not available";
-    const weather = weatherData?.weather?.[0]?.main || "Weather not available";
+    const locationName = weatherData?.name || "Loading...";
+    const weatherDescription = weatherData?.weather?.[0]?.description || "";
+    const weather = weatherData?.weather?.[0]?.main;
     let temperature = weatherData?.main?.temp || "Temperature not available";
     temperature = (temperature - 273.15).toFixed(0);
-    const wind = weatherData?.wind?.speed.toFixed(0);
+    const wind = weatherData?.wind?.speed.toFixed(0) || "";
     const weatherIcon = getWeatherIcon(weather);
 
     return (
@@ -19,7 +19,7 @@ export default function WeatherToday({ weatherData }: WeatherTodayProps) {
                 {locationName}
             </div>
             <div>
-                <img className="largeWeatherIcon" src={weatherIcon} alt="Weather icon" />
+                <img className="largeWeatherIcon" src={weatherIcon}/>
             </div>
             <div className="TodaysWeatherData">
                 <div>
