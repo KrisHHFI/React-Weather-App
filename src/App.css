@@ -1,22 +1,13 @@
 .App {
   text-align: center;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-
   color: white;
-  /*
-  background-color: black;
-  width: 700px;
-  padding: 10px;
-  background-color: rgba(0, 0, 0, 0.5);
-  */
 }
 
 .ContentContainer {
-  background-color: black;
-  width: 700px;
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.5);
   width: min-content;
@@ -32,7 +23,7 @@ ul {
 }
 
 .BackgroundPhotoContainer {
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   position: absolute;
 }
@@ -53,6 +44,8 @@ ul {
 .LocationInput {
   position: relative;
   z-index: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .InputBox {
@@ -70,7 +63,7 @@ ul {
 
 .Button {
   padding: 6px;
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .largeWeatherIcon {
@@ -114,4 +107,43 @@ ul {
 .smallWeatherIcon {
   width: 50px;
   padding: 15px;
+}
+
+@media screen and (max-width: 900px) {
+  .forecastedDays {
+    flex-direction: column;
+    align-items: end;
+  }
+
+  .forecastedDay {
+    flex-direction: row;
+    white-space: nowrap;
+    width: fit-content;
+    padding: 0;
+    margin: 0;
+  }
+
+  .ContentContainer {
+
+    width: min-content;
+  }
+
+  .smallWeatherIcon {
+    padding: 2px 0 0 10px;
+  }
+
+  .largeWeatherIcon {
+    padding: 5px;
+    min-width: 70px;
+  }
+
+  .LocationTitle {
+    font-size: 30px;
+  }
+
+  .TodaysWeatherData {
+    font-size: 16px;
+}
+
+
 }
