@@ -6,21 +6,22 @@ import drizzleIcon from '../Images/Icons/DrizzleIcon.png';
 import mistIcon from '../Images/Icons/MistIcon.png';
 
 export function getWeatherIcon(weather: string): string {
-  switch (weather) {
-    case "Clouds":
-      return cloudIcon;
-    case "Snow":
-      return snowIcon;
-    case "Clear":
-      return clearIcon;
-    case "Rain":
-      return rainIcon;
-    case "Drizzle":
-      return drizzleIcon;
-    case "Mist":
-    case "Fog":
-      return mistIcon;
-    default:
-      return "";
-  }
+    switch (weather) {
+        case "Clouds":
+            return cloudIcon;
+        case "Snow":
+            return snowIcon;
+        case "Clear":
+            return clearIcon;
+        case "Rain":
+            return rainIcon;
+        case "Drizzle":
+            return drizzleIcon;
+        case "Mist":
+        case "Fog":
+        case "Haze":
+            return mistIcon;
+        default:
+            return "";
+    }
 }

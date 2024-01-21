@@ -31,14 +31,6 @@ ul {
   justify-content: center;
 }
 
-.forecastedDay {
-  display: flex;
-  margin: 10px;
-  white-space: pre-line;
-  width: max-content;
-  padding: 0 5px 0 5px;
-}
-
 .BackgroundPhotoContainer {
   height: 100vh;
   width: 100vw;
@@ -88,4 +80,24 @@ ul {
   font-size: 20px;
   font-weight: bold;
   padding-bottom: 10px;
+}
+
+.forecastedDay {
+  display: flex;
+  margin: 10px;
+  white-space: pre-line;
+  padding: 0 5px 0 5px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  width: 120px;
+}
+
+.forecastedDayText {
+
+}
+
+.smallWeatherIcon {
+  width: 50px;
+  padding: 15px;
 }

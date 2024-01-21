@@ -23,7 +23,7 @@ export default function Background({ weatherData }: WeatherTodayProps) {
         BackgroundPhoto = rain;
     } else if (weatherDescription === "Drizzle") {
         BackgroundPhoto = drizzle;
-    }else if (weatherDescription === "Mist") {
+    }else if (weatherDescription === "Mist" || weatherDescription === "Fog" || weatherDescription === "Haze") {
         BackgroundPhoto = mist;
     }
 
