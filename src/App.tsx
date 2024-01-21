@@ -18,7 +18,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="BackgroundPhotoContainer">
       <Background weatherData={weatherData} />
       <div className="App">
         <div className="ContentContainer">
