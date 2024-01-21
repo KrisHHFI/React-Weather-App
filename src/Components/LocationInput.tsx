@@ -63,8 +63,9 @@ export default function LocationInput({ todaysWeatherData, forecastedWeatherData
                         type="text"
                         placeholder="Location"
                         ref={locationInput} // Value sets the "locationInput" variable
+                        className="InputBox"
                     />
-                    <button onClick={weatherTodayFetch}>
+                    <button className="Button" onClick={weatherTodayFetch}>
                         Search
                     </button>
                 </form>

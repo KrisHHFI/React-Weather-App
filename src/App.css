@@ -55,6 +55,24 @@ ul {
   z-index: 1;
 }
 
+.InputBox {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 3px;
+  font-size: 17px;
+}
+
+.InputBox:focus {
+  border: 3px solid white;
+  box-shadow: 0 0 10px white;
+}
+
+.Button {
+  padding: 6px;
+    font-weight: bold;
+}
+
 .largeWeatherIcon {
   width: 8%;
   min-width: 100px;
@@ -91,10 +109,6 @@ ul {
   align-items: center;
   justify-content: start;
   width: 120px;
-}
-
-.forecastedDayText {
-
 }
 
 .smallWeatherIcon {
