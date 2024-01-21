@@ -6,30 +6,42 @@ import drizzle from '../Images/Backgrounds/Drizzle.png';
 import mist from '../Images/Backgrounds/Mist.png';
 
 interface WeatherTodayProps {
-    weatherData: any; // Weather data prop
+  weatherData: any; // Weather data prop
 }
 
-export default function Background({ weatherData }: WeatherTodayProps) {
-    const weatherDescription = weatherData?.weather?.[0]?.main || "Weather not available";
-    let BackgroundPhoto = "";
+export default function getBackground({ weatherData }: WeatherTodayProps) {
+  const weatherDescription = weatherData?.weather?.[0]?.main || "Weather not available";
+  let BackgroundPhoto = "";
 
-    if (weatherDescription === "Clouds") {
-        BackgroundPhoto = clouds;
-    } else if (weatherDescription === "Snow") {
-        BackgroundPhoto = snow;
-    } else if (weatherDescription === "Clear") {
-        BackgroundPhoto = clear;
-    } else if (weatherDescription === "Rain") {
-        BackgroundPhoto = rain;
-    } else if (weatherDescription === "Drizzle") {
-        BackgroundPhoto = drizzle;
-    }else if (weatherDescription === "Mist" || weatherDescription === "Fog" || weatherDescription === "Haze") {
-        BackgroundPhoto = mist;
-    }
+  switch (weatherDescription) {
+    case "Clouds":
+      BackgroundPhoto = clouds;
+      break;
+    case "Snow":
+      BackgroundPhoto = snow;
+      break;
+    case "Clear":
+      BackgroundPhoto = clear;
+      break;
+    case "Rain":
+      BackgroundPhoto = rain;
+      break;
+    case "Drizzle":
+      BackgroundPhoto = drizzle;
+      break;
+    case "Mist":
+    case "Fog":
+    case "Haze":
+      BackgroundPhoto = mist;
+      break;
+    default:
+      BackgroundPhoto = "";
+      break;
+  }
 
-    return (
-        <div className="BackgroundPhotoContainer">
-            <img src={BackgroundPhoto} className="BackgroundPhoto" alt="Background" />
-        </div>
-    );
+  return (
+    <div className="BackgroundPhotoContainer">
+      <img src={BackgroundPhoto} className="BackgroundPhoto" alt="Background" />
+    </div>
+  );
 }
