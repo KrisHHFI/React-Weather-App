@@ -1,88 +1,52 @@
 .App {
-  text-align: center;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
   align-items: center;
   color: white;
+  display: flex;
+  justify-content: center;
   margin: 20px;
   min-height: calc(100vh - 40px);
+  text-align: center;
+}
+
+.BackgroundPhotoContainer {
+  min-height: 100vh;
+  position: absolute;
+  width: 100vw;
+}
+
+.BackgroundPhoto {
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+.Button {
+  font-weight: bold;
+  padding: 6px;
 }
 
 .ContentContainer {
-  padding: 20px;
   background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
   width: min-content;
 }
 
-ul {
-  list-style-type: none;
+.forecastedDay {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  margin: 10px;
+  padding: 0 5px 0 5px;
+  white-space: pre-line;
+  width: 120px;
 }
 
 .forecastedDays {
   display: flex;
   justify-content: center;
-}
-
-.BackgroundPhotoContainer {
-  min-height: 100vh;
-  width: 100vw;
-  position: absolute;
-}
-
-.BackgroundPhoto {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  position: absolute;
-  z-index: -1;
-}
-
-.LocationTitle {
-  font-size: 40px;
-  font-weight: bold;
-}
-
-.LocationInput {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.InputBox {
-  background-color: transparent;
-  border: 2px solid white;
-  color: white;
-  padding: 3px;
-  font-size: 17px;
-}
-
-.InputBox:focus {
-  border: 3px solid white;
-  box-shadow: 0 0 10px white;
-}
-
-.Button {
-  padding: 6px;
-  font-weight: bold;
-}
-
-.largeWeatherIcon {
-  width: 8%;
-  min-width: 100px;
-  padding: 15px;
-}
-
-.TodaysWeatherData {
-  display: flex;
-  flex-direction: column;
-  font-size: 20px;
-}
-
-.TodaysWeatherContainer {
-  padding-bottom: 20px;
-  border-bottom: 2px solid white;
 }
 
 .ForecastedWeatherContainer {
@@ -95,57 +59,89 @@ ul {
   padding-bottom: 10px;
 }
 
-.forecastedDay {
+.InputBox {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  font-size: 17px;
+  padding: 3px;
+}
+
+.InputBox:focus {
+  border: 3px solid white;
+  box-shadow: 0 0 10px white;
+}
+
+.largeWeatherIcon {
+  min-width: 100px;
+  padding: 15px;
+  width: 8%;
+}
+
+.LocationInput {
   display: flex;
-  margin: 10px;
-  white-space: pre-line;
-  padding: 0 5px 0 5px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: start;
-  width: 120px;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.LocationTitle {
+  font-size: 40px;
+  font-weight: bold;
 }
 
 .smallWeatherIcon {
-  width: 50px;
   padding: 15px;
+  width: 50px;
+}
+
+.TodaysWeatherContainer {
+  border-bottom: 2px solid white;
+  padding-bottom: 20px;
+}
+
+.TodaysWeatherData {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+}
+
+ul {
+  list-style-type: none;
 }
 
 @media screen and (max-width: 900px) {
-  .forecastedDays {
-    flex-direction: column;
-    align-items: end;
+  .ContentContainer {
+    width: min-content;
   }
 
   .forecastedDay {
     flex-direction: row;
+    margin: 0;
+    padding: 0;
     white-space: nowrap;
     width: fit-content;
-    padding: 0;
-    margin: 0;
   }
 
-  .ContentContainer {
-
-    width: min-content;
-  }
-
-  .smallWeatherIcon {
-    padding: 2px 0 0 10px;
+  .forecastedDays {
+    align-items: end;
+    flex-direction: column;
   }
 
   .largeWeatherIcon {
-    padding: 5px;
     min-width: 70px;
+    padding: 5px;
   }
 
   .LocationTitle {
     font-size: 30px;
   }
 
+  .smallWeatherIcon {
+    padding: 2px 0 0 10px;
+  }
+
   .TodaysWeatherData {
     font-size: 16px;
-}
-
-
+  }
 }
