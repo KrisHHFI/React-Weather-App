@@ -4,6 +4,7 @@ import clear from '../Images/Backgrounds/Clear.png';
 import rain from '../Images/Backgrounds/Rain.png';
 import drizzle from '../Images/Backgrounds/Drizzle.png';
 import mist from '../Images/Backgrounds/Mist.png';
+import earth from '../Images/Backgrounds/Earth.png';
 
 interface WeatherTodayProps {
   weatherData: any; // Weather data prop
@@ -35,7 +36,7 @@ export default function getBackground({ weatherData }: WeatherTodayProps) {
       BackgroundPhoto = mist;
       break;
     default:
-      BackgroundPhoto = "";
+      BackgroundPhoto = earth;
       break;
   }
 
