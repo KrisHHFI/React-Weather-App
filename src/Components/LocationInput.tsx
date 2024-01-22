@@ -6,13 +6,14 @@ interface LocationInputProps {
 }
 
 export default function LocationInput({ todaysWeatherData, forecastedWeatherData }: LocationInputProps) {
+    let apiCode = "d3b94e0efe686baf1916cbf041859138"; 
     const locationInput = useRef<HTMLInputElement>(null);
     let hasDefaultWeather = false;
 
     const weatherTodayFetch = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         e.preventDefault(); // Prevents page refresh
 
-        fetch('https://api.openweathermap.org/data/2.5/weather?q=' + locationInput.current!.value + '%20&APPID=d3b94e0efe686baf1916cbf041859138')
+        fetch('https://api.openweathermap.org/data/2.5/weather?q=' + locationInput.current!.value + '%20&APPID=' + apiCode)
             .then(response => response.json())
             .then(responseData => {
                 if (responseData.cod === "404") {
@@ -30,7 +31,7 @@ export default function LocationInput({ todaysWeatherData, forecastedWeatherData
     };
     
     const weatherForecastFetch = (lat: number, lon: number) => {
-        fetch('https://api.openweathermap.org/data/2.5/forecast?lat=' + lat + '&lon=' + lon + '&appid=' + 'd3b94e0efe686baf1916cbf041859138')
+        fetch('https://api.openweathermap.org/data/2.5/forecast?lat=' + lat + '&lon=' + lon + '&appid=' + apiCode)
             .then(response => response.json())
             .then(responseData => {
                 console.log(locationInput.current!.value + " weather forecast", responseData);
