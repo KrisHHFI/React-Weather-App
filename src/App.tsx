@@ -8,11 +8,11 @@ import Background from './Components/Background';
 function App() {
   const [weatherData, setWeatherData] = useState("null"); // State to hold today's weather data
   const [forecastedWeatherData, setForecastedWeatherData] = useState("null"); // State to hold forecasted weather data
-
+  // Todays weather data, from the LocationInput
   const handleWeatherData = (todayData: any) => {
     setWeatherData(todayData);
   };
-
+  // Forecasted weather data, from the LocationInput
   const handleForecastedWeatherData = (forecastData: any) => {
     setForecastedWeatherData(forecastData);
   };
