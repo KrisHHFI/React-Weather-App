@@ -2,7 +2,7 @@
 
 <img src=""/>
 
-Check out the [demo video]().
+Check out the [demo video](https://youtu.be/qFYw4C6YDLg).
 
 ### About
 
@@ -15,5 +15,5 @@ Check out the [demo video]().
 2) Download the project and extract the folder.
 3) Navigate to the project folder in Command Prompt.
 4) Execute the command "npm install".
-5) Then execute the command "npm start". The program will now launch. 
+5) Then execute the command "npm start", which will launch the program. 
 6) Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
