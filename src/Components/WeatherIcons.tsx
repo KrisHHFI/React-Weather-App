@@ -20,6 +20,7 @@ export function getWeatherIcon(weather: string): string {
         case "Mist":
         case "Fog":
         case "Haze":
+        case "Smoke":
             return mistIcon;
         default:
             return "";

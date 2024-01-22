@@ -15,13 +15,13 @@ export default function LocationInput({ todaysWeatherData, forecastedWeatherData
         fetch('https://api.openweathermap.org/data/2.5/weather?q=' + locationInput.current!.value + '%20&APPID=d3b94e0efe686baf1916cbf041859138')
             .then(response => response.json())
             .then(responseData => {
-                console.log(locationInput.current!.value + " weather today", responseData);
-                if (responseData.cod == "404") {
-                    return;
+                if (responseData.cod === "404") {
+                    locationInput.current!.value = locationInput.current!.value + " not found.";
                 }
+                console.log(locationInput.current!.value + " weather today", responseData);
                 todaysWeatherData(responseData);
-                const lat = responseData.coord.lat;
-                const lon = responseData.coord.lon;
+                const lat = responseData?.coord?.lat;
+                const lon = responseData?.coord?.lon;
                 weatherForecastFetch(lat, lon);
             })
             .catch(err => {

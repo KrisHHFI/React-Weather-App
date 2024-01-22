@@ -33,6 +33,7 @@ export default function getBackground({ weatherData }: WeatherTodayProps) {
     case "Mist":
     case "Fog":
     case "Haze":
+    case "Smoke":
       BackgroundPhoto = mist;
       break;
     default:
@@ -41,6 +42,6 @@ export default function getBackground({ weatherData }: WeatherTodayProps) {
   }
 
   return (
-    <img src={BackgroundPhoto} className="BackgroundPhoto"/>
+    <img src={BackgroundPhoto} className="BackgroundPhoto" />
   );
 }
