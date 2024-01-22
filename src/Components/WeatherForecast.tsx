@@ -32,12 +32,14 @@ export default function WeatherForecast({ forecastedWeatherData }: WeatherForeca
     }
   
     const filteredItems = filterAndOrganizeData();
+    let forecastTitle = forecastedWeatherData?.city?.name;
+    forecastTitle = forecastTitle !== undefined ? "The next 5 days in " + forecastTitle: "";
   
     return (
       <>
         <div className="ForecastedWeatherContainer">
           <div className="forecastTitle">
-            The next 5 days in {forecastedWeatherData?.city?.name}
+            {forecastTitle}
           </div>
           <div className="forecastedDays">
             {filteredItems.map((item: any) => (

@@ -40,6 +40,6 @@ export default function getBackground({ weatherData }: WeatherTodayProps) {
   }
 
   return (
-    <img src={BackgroundPhoto} className="BackgroundPhoto" alt="Background" />
+    <img src={BackgroundPhoto} className="BackgroundPhoto"/>
   );
 }
