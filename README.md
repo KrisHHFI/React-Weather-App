@@ -17,5 +17,6 @@ Check out the [demo video](https://youtu.be/qFYw4C6YDLg).
 2) Download the project and extract the folder.
 3) Navigate to the project folder in Command Prompt.
 4) Execute the command "npm install".
-5) Then execute the command "npm start", which will launch the program. 
-6) Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+5) Create a free account with OpenWeatherMap. Then, copy your API code and replace the apiCode value in the LocationInputProps file (src/Components/LocationInput.tsx).
+6) Then execute the command "npm start", which will launch the program. 
+7) Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
