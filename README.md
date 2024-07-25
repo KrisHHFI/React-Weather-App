@@ -1,15 +1,19 @@
 # React-Weather-App
 
-<img src="Weather App Promo Pic 1.PNG"/>
-<img src="Weather App Promo Pic 2.PNG"/>
+<img src="src/Images/GitHub/Weather App Promo Pic 1.PNG"/>
+<img src="src/Images/GitHub/Weather App Promo Pic 2.PNG"/>
 
 Check out the [demo video](https://youtu.be/qFYw4C6YDLg).
+
+<br>
 
 ### About
 
 - A browser based weather app which enables the user to check the weather of towns and cities around the world.
 - Made using React, TypeScript and OpenWeatherMap.
 - The app is catered for both mobile and desktop view.
+
+<br>
 
 ### Launch the App
 
