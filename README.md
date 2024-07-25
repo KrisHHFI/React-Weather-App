@@ -13,6 +13,9 @@ Check out the [demo video](https://youtu.be/qFYw4C6YDLg).
 
 ### Launch the App
 
+- Check out the [project](https://krishhfi.github.io/React-Weather-App/) here.
+- If there are API key related issues with the live site, follow the steps below.
+
 1) Install Node.js
 2) Download the project and extract the folder.
 3) Navigate to the project folder in Command Prompt.
