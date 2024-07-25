@@ -1,13 +1,18 @@
 import React from 'react';
+import Wallpaper from './Wallpaper';
 
 interface BackgroundPhotoContainerProps {
   children: React.ReactNode;
+  weatherData: any;
 }
 
-const BackgroundPhotoContainer: React.FC<BackgroundPhotoContainerProps> = ({ children }) => {
+const BackgroundPhotoContainer: React.FC<BackgroundPhotoContainerProps> = ({ children, weatherData }) => {
   return (
     <div className="AppContainer">
-      {children}
+      <Wallpaper weatherData={weatherData} />
+      <div className="ContentContainer">
+        {children}
+      </div>
     </div>
   );
 };

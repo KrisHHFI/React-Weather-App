@@ -3,9 +3,7 @@ import './App.css';
 import LocationInput from './Components/LocationInput';
 import WeatherToday from './Components/WeatherToday';
 import WeatherForecast from './Components/WeatherForecast';
-import Wallpaper from './Components/Wallpaper';
 import AppContainer from './Components/AppContainer';
-
 
 function App() {
   const [weatherData, setWeatherData] = useState("null"); // State to hold today's weather data
@@ -20,16 +18,13 @@ function App() {
   };
 
   return (
-    <AppContainer>
-      <Wallpaper weatherData={weatherData} />
-        <div className="ContentContainer">
-          <WeatherToday weatherData={weatherData} />
-          <WeatherForecast forecastedWeatherData={forecastedWeatherData} />
-          <LocationInput
-            todaysWeatherData={handleWeatherData}
-            forecastedWeatherData={handleForecastedWeatherData}
-          />
-        </div>
+    <AppContainer weatherData={weatherData}>
+      <WeatherToday weatherData={weatherData} />
+      <WeatherForecast forecastedWeatherData={forecastedWeatherData} />
+      <LocationInput
+        todaysWeatherData={handleWeatherData}
+        forecastedWeatherData={handleForecastedWeatherData}
+      />
     </AppContainer>
   );
 }
