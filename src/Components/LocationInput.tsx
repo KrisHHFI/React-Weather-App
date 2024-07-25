@@ -6,7 +6,7 @@ interface LocationInputProps {
 }
 
 export default function LocationInput({ todaysWeatherData, forecastedWeatherData }: LocationInputProps) {
-    let apiCode = "d3b94e0efe686baf1916cbf041859138"; 
+    let apiCode = "98e33414352d8e6755f5d3fff5ce0484"; 
     const locationInput = useRef<HTMLInputElement>(null);
     let hasDefaultWeather = false;
 
