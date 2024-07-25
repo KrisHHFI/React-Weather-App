@@ -1,20 +1,15 @@
-.App {
+.AppContainer {
   align-items: center;
-  color: white;
   display: flex;
   justify-content: center;
-  margin: 20px;
-  min-height: calc(100vh - 40px);
-  text-align: center;
-}
-
-.BackgroundPhotoContainer {
+  color: white;
   min-height: 100vh;
+  /*min-height: calc(100vh - 40px); */
   position: absolute;
   width: 100vw;
 }
 
-.BackgroundPhoto {
+.Wallpaper {
   height: 100%;
   object-fit: cover;
   position: absolute;
@@ -30,6 +25,7 @@
 .ContentContainer {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 20px;
+  text-align: center;
   width: min-content;
 }
 

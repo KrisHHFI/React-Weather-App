@@ -7,7 +7,7 @@ import mist from '../Images/Backgrounds/Mist.png';
 import earth from '../Images/Backgrounds/Earth.png';
 
 interface WeatherTodayProps {
-  weatherData: any; // Weather data prop
+  weatherData: any;
 }
 
 export default function getBackground({ weatherData }: WeatherTodayProps) {
@@ -42,6 +42,6 @@ export default function getBackground({ weatherData }: WeatherTodayProps) {
   }
 
   return (
-    <img src={BackgroundPhoto} className="BackgroundPhoto" />
+    <img src={BackgroundPhoto} className="Wallpaper" />
   );
 }
