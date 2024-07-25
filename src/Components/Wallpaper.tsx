@@ -5,10 +5,7 @@ import rain from '../Images/Backgrounds/Rain.png';
 import drizzle from '../Images/Backgrounds/Drizzle.png';
 import mist from '../Images/Backgrounds/Mist.png';
 import earth from '../Images/Backgrounds/Earth.png';
-
-interface WeatherTodayProps {
-  weatherData: any;
-}
+import { WeatherTodayProps } from '../Constants/Interfaces';
 
 export default function getBackground({ weatherData }: WeatherTodayProps) {
   const weatherDescription = weatherData?.weather?.[0]?.main || "Weather not available";

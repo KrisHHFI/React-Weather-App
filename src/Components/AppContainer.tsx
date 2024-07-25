@@ -1,10 +1,6 @@
 import React from 'react';
 import Wallpaper from './Wallpaper';
-
-interface BackgroundPhotoContainerProps {
-  children: React.ReactNode;
-  weatherData: any;
-}
+import { BackgroundPhotoContainerProps } from '../Constants/Interfaces';
 
 const BackgroundPhotoContainer: React.FC<BackgroundPhotoContainerProps> = ({ children, weatherData }) => {
   return (

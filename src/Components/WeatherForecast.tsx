@@ -1,8 +1,5 @@
 import { getWeatherIcon } from './WeatherIcons';
-
-interface WeatherForecastProps {
-    forecastedWeatherData: any; // Forecasted weather data prop
-}
+import { WeatherForecastProps } from '../Constants/Interfaces';
 
 export default function WeatherForecast({ forecastedWeatherData }: WeatherForecastProps) {
     const todaysDate = new Date(forecastedWeatherData?.list?.[0].dt_txt).getDate();

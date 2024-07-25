@@ -1,8 +1,5 @@
 import { getWeatherIcon } from './WeatherIcons';
-
-interface WeatherTodayProps {
-    weatherData: any; // Weather data prop
-}
+import { WeatherTodayProps } from '../Constants/Interfaces';
 
 export default function WeatherToday({ weatherData }: WeatherTodayProps) {
     const locationName = weatherData?.name || "Loading...";

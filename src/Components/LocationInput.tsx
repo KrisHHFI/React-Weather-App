@@ -1,9 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-
-interface LocationInputProps {
-    todaysWeatherData: (weatherData: boolean) => void; // Callback for passing todays weather data
-    forecastedWeatherData: (weatherForecastData: boolean) => void; // Callback for passing the forecasted weather data
-}
+import { LocationInputProps } from '../Constants/Interfaces';
 
 export default function LocationInput({ todaysWeatherData, forecastedWeatherData }: LocationInputProps) {
     let apiCode = "98e33414352d8e6755f5d3fff5ce0484"; 
